@@ -409,11 +409,14 @@ void pair(std::shared_ptr<safe::queue_t<crypto::x509_t>> &add_cert, std::shared_
 
       ptr->second.async_insert_pin.salt = std::move(args.at("salt"s));
 
-      if(config::sunshine.flags[config::flag::PIN_STDIN]) {
-        std::string pin;
+      // if(config::sunshine.flags[config::flag::PIN_STDIN]) {
+      if(true) {
+        // std::string pin;
+        std::string pin = "1234";
 
-        std::cout << "Please insert pin: "sv;
-        std::getline(std::cin, pin);
+        // std::cout << "Please insert pin: "sv;
+        std::cout << "auto get pin: " << pin.c_str() << std::endl;
+        // std::getline(std::cin, pin);
 
         getservercert(ptr->second, tree, pin);
       }
