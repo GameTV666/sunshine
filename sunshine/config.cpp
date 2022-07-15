@@ -689,6 +689,9 @@ int apply_flags(const char *line) {
     case 'p':
       config::sunshine.flags[config::flag::UPNP].flip();
       break;
+    case '3':
+      config::sunshine.flags[config::flag::CONST_PIN].flip();
+      break;
     default:
       std::cout << "Warning: Unrecognized flag: ["sv << *line << ']' << std::endl;
       ret = -1;
